@@ -5,12 +5,14 @@ import { HeaderView, HeaderTitle, HeaderButton, colors } from '../styles/appStyl
 
 import { Entypo } from "@expo/vector-icons";
 
-const Header = () => {
+const Header = ({ handleClearTodos }) => {
   return (
     <HeaderView>
-      <HeaderTitle>remble Todos</HeaderTitle>
-      <HeaderButton>
-        <Entypo name="trash" size={25} color={colors.tertiary} />
+      <HeaderTitle>Reminders</HeaderTitle>
+      <HeaderButton
+        onPress={handleClearTodos}
+      >
+        <Entypo name="trash" size={25} color={colors.secondary} />
       </HeaderButton>
     </HeaderView>
   );

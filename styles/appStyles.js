@@ -4,9 +4,9 @@ import Constants from "expo-constants"
 
 export const colors = {
   primary: "#fff", // white
-  secondary: "#0CC9CA", // green
-  tertiary: "#999999", // gray
-  alternative: "#F95E21", // orange
+  secondary: "blue",
+  tertiary: "black",
+  alternative: "#999999",
 }
 
 const statusBarHeight = Constants.statusBarHeight
@@ -30,9 +30,8 @@ export const HeaderView = styled.View`
 export const HeaderTitle = styled.Text`
   font-size: 35px;
   font-weight: bold;
-  color: ${colors.tertiary};
-  letter-spacing: 2px;
-  font-style: italic;
+  padding-horizontal: 20px;
+  color: ${colors.secondary};
 `
 
 export const HeaderButton = styled.TouchableOpacity`
@@ -40,25 +39,40 @@ export const HeaderButton = styled.TouchableOpacity`
   color: ${colors.tertiary};
 `
 
-export const ListView = styled.TouchableHighlight`
-  background-color:${colors.secondary};
+export const ListViewContainer = styled.View`
+  flex-direction: row;
+  background-color:${colors.primary};
   min-height: 85px;
   width: 100%;
+`
+
+export const CheckboxContainer = styled.TouchableHighlight`
+  background-color:${colors.primary};
+  min-height: 85px;
+  width: 60px;
   padding: 15px;
+`
+
+export const ListView = styled.TouchableHighlight`
+  background-color:${colors.primary};
+  min-height: 85px;
+  padding: 15px;
+  width: 100%;
   justify-content: space-around;
   margin-bottom:15px;
-  border-radius: 10px;
+  border-bottom-color: ${colors.alternative};
+  border-bottom-width: 1;
 `
 
 export const ListViewHidden = styled.View`
-  background-color:${colors.tertiary};
+  background-color:${colors.secondary};
   min-height: 85px;
   width: 100%;
   padding: 15px;
   justify-content: center;
   align-items: flex-start;
   margin-bottom: 15px;
-  border-radius: 11px:
+  border-radius: 11px;
 `
 
 export const HiddenButton = styled.TouchableOpacity`
@@ -73,9 +87,86 @@ export const TodoText = styled.Text`
 `
 
 export const TodoDate = styled.Text`
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-size: 14px;
   color: ${colors.alternative};
-  text-align: right;
-  text-transform: uppercase;
+`
+
+export const SwipedTodoText = styled(TodoText)`
+  color: ${colors.alternative};
+  font-style: italic;
+  text-decoration: line-through;
+`
+
+export const ModalButton = styled.View`
+  width: 30px;
+  height: 30px;
+  background-color: ${colors.secondary};
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+
+`
+
+export const ModalButtonContainer = styled.TouchableOpacity`
+  width: 100%;
+  align-items: center;
+  align-self: center;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 15px;
+  height: 50px;
+  flex-direction: row;
+  padding-left: 20px
+`
+
+export const ModalText = styled.Text`
+  font-size: 20px;
+  font-weight: bold;
+  padding-horizontal: 20px;
+  color: ${colors.secondary};
+`
+
+export const StyledInput = styled.TextInput`
+  width: 300px;
+  height: 50px;
+  background-color: ${colors.primary};
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+`
+
+export const ModalContainer = styled.View`
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  background-color: ${colors.primary};
+`
+
+export const ModalAction = styled.TouchableOpacity`
+  width: 60px;
+  height: 60px;
+  background-color: ${props => props.color};
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+`
+
+export const ModalActionGroup = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 30px;
+`
+
+export const ModalView = styled.View`
+  background-color: ${colors.secondary};
+  border-radius: 20px;
+  padding: 35px;
+`
+
+export const ModalIcon = styled.View`
+  align-items: center;
+  margin-bottom: 30px;
 `
