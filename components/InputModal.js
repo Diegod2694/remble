@@ -1,6 +1,6 @@
 import React from "react"
 import { Modal } from "react-native"
-import { AntDesign } from "@expo/vector-icons"
+import { AntDesign, Entypo } from "@expo/vector-icons"
 import moment from "moment"
 
 import {
@@ -25,6 +25,7 @@ const InputModal = ({
     todoToBeEdited,
     setTodoToBeEdited,
     handleEditTodo,
+    handleDeleteTodo,
     todos
   }) => {
 
@@ -82,11 +83,14 @@ const InputModal = ({
               onSubmitEditing={handleSubmit}
             />
             <ModalActionGroup>
-              <ModalAction color={colors.primary} onPress={handleCloseModal}>
-                <AntDesign name="close" size={28} color={colors.tertiary} />
+              <ModalAction color={colors.tertiary} onPress={handleCloseModal}>
+                <AntDesign name="close" size={28} color={colors.primary} />
               </ModalAction>
               <ModalAction color={colors.tertiary} onPress={handleSubmit}>
                 <AntDesign name="check" size={28} color={colors.primary} />
+              </ModalAction>
+              <ModalAction color={colors.tertiary} onPress={handleDeleteTodo}>
+                <Entypo name="trash" size={25} color={colors.primary} />
               </ModalAction>
             </ModalActionGroup>
           </ModalView>

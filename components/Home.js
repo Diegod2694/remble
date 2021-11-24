@@ -71,6 +71,15 @@ const Home = () => {
     setTodos(newTodos)
   }
 
+  const handleDeleteTodo = () => {
+    const newTodos = [...todos];
+    const todoIndex = todos.findIndex((todo) => todo.key === todoToBeEdited.key)
+    newTodos.splice(todoIndex, 1)
+    setTodos(newTodos)
+    setTodoInputValue('')
+    setModalOpen(false)
+  }
+
   return (
     <>
       <Header handleClearTodos={handleClearTodos}/>
@@ -89,6 +98,7 @@ const Home = () => {
         todoToBeEdited={todoToBeEdited}
         setTodoToBeEdited={setTodoToBeEdited}
         handleEditTodo={handleEditTodo}
+        handleDeleteTodo={handleDeleteTodo}
         todos={todos}
       />
     </>

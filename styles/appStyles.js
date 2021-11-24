@@ -39,9 +39,10 @@ export const HeaderButton = styled.TouchableOpacity`
   color: ${colors.tertiary};
 `
 
+// export const ListViewContainer = styled.TouchableOpacity`
 export const ListViewContainer = styled.View`
   flex-direction: row;
-  background-color:${colors.primary};
+  background-color:${props => props.isActive ? colors.secondary : colors.primary};
   min-height: 85px;
   width: 100%;
 `
@@ -61,7 +62,7 @@ export const ListView = styled.TouchableHighlight`
   justify-content: space-around;
   margin-bottom:15px;
   border-bottom-color: ${colors.alternative};
-  border-bottom-width: 1;
+  border-bottom-width: 1px;
 `
 
 export const ListViewHidden = styled.View`
